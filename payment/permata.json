@@ -1,0 +1,46 @@
+{
+    "title": "Cara Bayar Virtual Account Permata Bank",
+    "description": "Gaess, berikut cara bayar Virtual Account Permata Bank.",
+    "sections": [
+        {
+            "subtitle": "Pembayaran melalui ATM Permata",
+            "contents": [
+                "Pada menu utama, pilih \"Transaksi Lainnya\"",
+                "Pilih menu Pembayaran",
+                "Pilih Pembayaran Lainnya",
+                "Pilih Virtual Account",
+                "Masukkan nomor Virtual Account kamu",
+                "Jumlah yang harus dibayar dan nomor rekening akan muncul pada halaman konfirmasi pembayaran. Jika informasi sudah benar, pilih Benar"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran melalui Permata Mobile X",
+            "contents": [
+                "Buka aplikasi PermataMobile X",
+                "Masukan Password",
+                "Pilih Bayar Tagihan",
+                "Pilih Virtual Account",
+                "Masukkan Nomor Virtual Account",
+                "Pilih rekening",
+                "Masukkan nominal pembayaran",
+                "Muncul konfirmasi pembayaran",
+                "Masukan Mobile PIN",
+                "Transaksi selesai"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran melalui PermataNet",
+            "contents": [
+                "Buka webitse PermataNet",
+                "Masukan User ID & Password",
+                "Pilih Pembayaran Tagihan",
+                "Pilih Virtual Account",
+                "Masukkan nomor Virtual Account kamu",
+                "Masukkan nominal pembayaran",
+                "Muncul konfirmasi pembayaran",
+                "Masukan Mobil PIN",
+                "Transaksi selesai"
+            ]
+        }
+    ]
+}

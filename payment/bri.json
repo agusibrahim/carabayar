@@ -1,0 +1,86 @@
+{
+    "title": "Cara Bayar dengan BRI Virtual Account",
+    "description": "Anda dapat melakukan pembayaran dengan menggunakan BRI Virtual Account dengan mengikuti langkah - langkah berikut :",
+    "sections": [
+        {
+            "subtitle": "Pembayaran BRIVA dengan ATM BRI",
+            "contents": [
+                "Lakukan pembayaran melalui ATM Bank BRI",
+                "Pilih menu Transaksi Lain",
+                "Pilih menu Pembayaran",
+                "Pilih menu Lainnya",
+                "Pilih menu BRIVA",
+                "Masukkan Nomor Virtual Account sesuai yang tertera pada detail transaksi kamu",
+                "Pilih Ya untuk memproses pembayaran"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BRIVA dengan mobile banking BRI",
+            "contents": [
+                "Masuk ke aplikasi BRI Mobile dan pilih Mobile Banking BRI",
+                "Pilih menu Info",
+                "Pilih menu BRIVA",
+                "Masukkan Nomor Virtual Account sesuai yang tertera pada detail transaksi kamu dan masukkan jumlah pembayaran",
+                "Masukkan PIN Mobile/SMS Banking BRI",
+                "Anda akan mendapatkan notifikasi pembayaran melalui SMS"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BRIVA dengan internet banking BRI",
+            "contents": [
+                "Login pada halaman Internet Banking BRI",
+                "Pilih menu Pembayaran",
+                "Pilih menu BRIVA",
+                "Masukkan Nomor Virtual Account sesuai yang tertera pada detail transaksi kamu",
+                "Masukkan password Internet Banking BRI",
+                "Masukkan mToken Internet Banking BRI",
+                "Anda akan mendapatkan notifikasi pembayaran"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BRIVA melalui teller BRI",
+            "contents": [
+                "Ambil nomor antrian transaksi Teller dan isi slip setoran",
+                "Serahkan slip dan jumlah setoran kepada Teller BRI",
+                "Teller BRI akan melakukan validasi transaksi",
+                "Simpan slip setoran hasil validasi sebagai bukti pembayaran"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BRIVA dengan mini ATM BRI",
+            "contents": [
+                "Pilih menu Mini ATM",
+                "Pilih menu Pembayaran",
+                "Pilih menu BRIVA",
+                "Swipe kartu ATM",
+                "Masukkan Nomor Virtual Account sesuai yang tertera pada detail transaksi kamu",
+                "Masukkan pin ATM",
+                "Klik Lanjut untuk memproses pembayaran",
+                "Klik Ya untuk mencetak struk"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BRIVA dengan ATM bank lain",
+            "contents": [
+                "Setelah memasukkan kartu ATM dan nomor PIN, pilih menu Transaksi Lainnya",
+                "Pilih menu Transfer",
+                "Pilih menu Ke Rek Bank Lain",
+                "Masukkan Kode Bank Tujuan: BRI (Kode Bank: 002). Lalu klik Benar",
+                "Masukkan jumlah pembayaran sesuai tagihan. Klik Benar",
+                "Masukkan Nomor Virtual Account sesuai yang tertera pada detail transaksi kamu. Klik Benar",
+                "Pilih dari rekening apa pembayaran akan di-debet",
+                "Sistem akan memverifikasi data yang dimasukkan. Pilih Benar untuk memproses pembayaran"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BRIVA melalui teller bank lain",
+            "contents": [
+                "Lakukan pembayaran melalui Teller Bank dengan mengisi slip pemindah bukuan (Transfer)",
+                "Masukkan nama bank tujuan BRI",
+                "Masukkan Nomor Virtual Account sesuai yang tertera pada detail transaksi kamu",
+                "Masukkan jumlah pembayaran",
+                "Anda akan mendapatkan copy slip sebagai bukti pembayaran"
+            ]
+        }
+    ]
+}

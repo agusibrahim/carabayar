@@ -1,0 +1,56 @@
+{
+    "title": "Cara Bayar dengan CIMB Virtual Account",
+    "description": "Gaess saat ini kamu sudah dapat melakukan pembayaran dengan menggunakan CIMB Virtual Account dengan mengikuti langkah - langkah berikut :",
+    "sections": [
+        {
+            "subtitle": "Pembayaran CIMB Virtual Account dengan ATM CIMB",
+            "contents": [
+                "Masukkan Kartu ATM dan PIN CIMB",
+                "Pilih menu Pembayaran > Lanjut > Virtual Account",
+                "Masukkan nomor virtual account 6449-081234567890",
+                "Pilih rekening debit",
+                "Nomor, nama virtual account dan jumlah billing ditampilkan pada layar",
+                "Pilih OK untuk melakukan pembayaran",
+                "Konfirmasi pembayaran ditampilkan pada layar"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran CIMB Virtual Account dengan CIMB Clicks",
+            "contents": [
+                "Login ke CIMB clicks",
+                "Pilih menu Bayar Tagihan / Pay Bills",
+                "Pilih Rekening Sumber / Source Account dan Jenis Pembayaran / Payment Type > Virtual Account",
+                "Masukkan nomor virtual account kamu",
+                "Nomor, nama virtual account dan jumlah billing ditampilkan pada layar",
+                "Masukkan 6 digit mPIN dan tekan tombol Submit",
+                "Konfirmasi pembayaran ditampilkan pada layar"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran CIMB Virtual Account dengan Internet Banking Bank Lain",
+            "contents": [
+                "Login ke internet banking",
+                "Pilih menu transfer ke Bank Lain Online",
+                "Pilih bank tujuan Bank CIMB Niaga (kode bank: 022)",
+                "Masukkan nomor virtual account kamu",
+                "Masukkan jumlah pembayaran sesuai tagihan",
+                "Nomor, nama virtual account dan jumlah billing ditampilkan pada layar",
+                "Ikuti instruksi untuk menyelesaikan transaksi",
+                "Konfirmasi pembayaran ditampilkan pada layar"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran CIMB Virtual Account dengan Go Mobile CIMB Niaga",
+            "contents": [
+                "Login ke Go Mobile",
+                "Pilih menu TRANSFER",
+                "Pilih Transfer to Other CIMB Niaga Account",
+                "Pilih rekening sumber Anda: CASA atau Rekening Ponsel",
+                "Pilih CASA dan masukkan nomor virtual account kamu",
+                "Masukkan jumlah pembayaran sesuai tagihan",
+                "Masukkan Mobile Banking PIN",
+                "Konfirmasi pembayaran ditampilkan pada layar"
+            ]
+        }
+    ]
+}

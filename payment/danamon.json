@@ -1,0 +1,37 @@
+{
+    "title": "Pembayaran dengan Danamon Virtual Account",
+    "description": "Kamu dapat melakukan pembayaran dengan menggunakan Danamon Virtual Account dengan mengikuti langkah - langkah berikut :",
+    "sections": [
+        {
+            "subtitle": "Pembayaran Danamon Virtual Account dengan ATM Danamon",
+            "contents": [
+                "Masukkan Kartu ATM Danamon & PIN.",
+                "Pilih menu Pembayaran > menu Lainnya > menu Virtual Account.",
+                "Masukkan Nomor Virtual Account sesuai yang tertera pada detail transaksi kamu",
+                "Di halaman konfirmasi, pastikan detil pembayaran sudah sesuai seperti No VA, Nama, Institusi, dan Total Tagihan.",
+                "Pilih 'Ya' untuk memproses transaksi.",
+                "Simpan struk transaksi sebagai bukti pembayaran."
+            ]
+        },
+        {
+            "subtitle": "Pembayaran Danamon Virtual Account dengan ATM bank lain",
+            "contents": [
+                "Masuk ke menu Transfer.",
+                "Pilih Transfer ke bank lain dengan tujuan rekening Bank Danamon.",
+                "Masukkan Nomor Virtual Account sesuai yang tertera pada detail transaksi kamu",
+                "Masukkan jumlah pembayaran sesuai tagihan.",
+                "Akan muncul rincian pembayaran. Jika sudah benar, klik 'Ya' untuk melanjutkan."
+            ]
+        },
+        {
+            "subtitle": "Pembayaran Danamon Virtual Account dengan online transfer dari bank lain",
+            "contents": [
+                "Pilih menu Transfer ke Bank Lain.",
+                "Pilih Bank Danamon sebagai bank tujuan.",
+                "Masukkan nomor Virtual Account kamu.",
+                "Masukkan nominal transfer sesuai tagihan.",
+                "Ikuti instruksi untuk menyelesaikan transaksi."
+            ]
+        }
+    ]
+}

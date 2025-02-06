@@ -1,0 +1,32 @@
+{
+    "title": "Pembayaran dengan Mandiri Virtual Account",
+    "description": "Kamu dapat melakukan pembayaran dengan menggunakan Mandiri Virtual Account dengan mengikuti langkah - langkah berikut:",
+    "sections": [
+        {
+            "subtitle": "Pembayaran Mandiri Virtual Account dengan ATM bank Mandiri",
+            "contents": [
+                "Masukkan kartu ATM dan Pin.",
+                "Pilih Menu Bayar/Beli.",
+                "Pilih menu Lainnya, hingga menemukan menu Multipayment.",
+                "Masukkan kode biller, lalu pilih Benar.",
+                "Masukkan Nomor Virtual Account sesuai yang tertera pada transaksi kamu, lalu pilih tombol Benar.",
+                "Masukkan Angka 1 untuk memilih tagihan, lalu pilih tombol Ya.",
+                "Akan muncul konfirmasi pembayaran, lalu pilih tombol Ya.",
+                "Simpan struk sebagai bukti pembayaran Anda."
+            ]
+        },
+        {
+            "subtitle": "Pembayaran Mandiri Virtual Account dengan Internet Banking atau Mandiri Online",
+            "contents": [
+                "Login Mandiri Online dengan memasukkan username dan password.",
+                "Pilih menu Pembayaran.",
+                "Pilih menu Multipayment.",
+                "Pilih penyedia jasa \"PrismaLink\".",
+                "Masukkan Nomor Virtual Account dan Nominal yang akan dibabayarkan, lalu pilih Lanjut.",
+                "Setelah muncul tagihan, pilih Konfirmasi.",
+                "Masukkan PIN/ challange code token.",
+                "Transaksi selesai, simpan bukti bayar kamu."
+            ]
+        }
+    ]
+}

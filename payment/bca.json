@@ -1,0 +1,51 @@
+{
+    "title": "Pembayaran dengan BCA Virtual Account",
+    "description": "Kamu dapat melakukan pembayaran dengan metode pembayaran BCA Virtual Account dengan mengikuti langkah - langkah berikut :",
+    "sections": [
+        {
+            "subtitle": "Pembayaran BCA Virtual Account dengan ATM BCA",
+            "contents": [
+                "Masukkan Kartu ATM BCA & PIN.",
+                "Pilih menu Transaksi Lainnya > Transfer > ke Rekening BCA Virtual Account.",
+                "Masukkan nomor Virtual Account yang tertera pada detail transaksi kamu.",
+                "Di halaman konfirmasi, pastikan detil pembayaran sudah sesuai seperti No VA, Nama, Perus/Produk dan Total Tagihan.",
+                "Pastikan nama kamu dan Total Tagihannya benar.",
+                "Jika sudah benar, klik Ya.",
+                "Simpan struk transaksi sebagai bukti pembayaran."
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BCA Virtual Account dengan mobile banking BCA (m-BCA)",
+            "contents": [
+                "Lakukan log in pada aplikasi BCA Mobile.",
+                "Pilih menu m-BCA, kemudian masukkan kode akses m-BCA.",
+                "Pilih m-Transfer > BCA Virtual Account.",
+                "Pilih dari Daftar Transfer, atau masukan nomor Virtual Account yang tertera pada detail transaksi kamu.",
+                "Pastikan nama kamu dan Total Tagihannya sudah benar.",
+                "Kemudian klik Ok dan masukkan pin m-BCA.",
+                "Pembayaran selesai. Simpan notifikasi yang muncul sebagai bukti pembayaran."
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BCA Virtual Account dengan KlikBCA Individual",
+            "contents": [
+                "Lakukan log in pada aplikasi KlikBCA Individual (https://ibank.klikbca.com/).",
+                "Masukkan User ID dan PIN.",
+                "Pilih Transfer Dana > Transfer ke BCA Virtual Account.",
+                "Masukkan nomor Virtual Account yang tertera pada detail transaksi kamu.",
+                "Kalau sudah benar, klik Lanjutkan.",
+                "Cetak nomor referensi sebagai bukti transaksinya."
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BCA Virtual Account di Kantor Bank BCA",
+            "contents": [
+                "Ambil nomor antrian transaksi Teller dan isi slip setoran.",
+                "Serahkan slip dan jumlah setoran kepada Teller BCA.",
+                "Teller BCA akan melakukan validasi transaksi.",
+                "Simpan slip setoran hasil validasi sebagai bukti pembayaran."
+            ]
+        }
+    ],
+    "note": "Pembayaran BCA Virtual Account tidak bisa dilakukan dari M-banking bank lain, hanya bisa dilakukan melalui M-banking BCA saja."
+}

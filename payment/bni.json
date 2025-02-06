@@ -1,0 +1,107 @@
+{
+    "title": "Pembayaran dengan BNI Virtual Account",
+    "description": "Anda dapat melakukan pembayaran dengan metode pembayaran BNI Virtual Account dengan mengikuti langkah - langkah berikut :",
+    "sections": [
+        {
+            "subtitle": "Pembayaran BNI Virtual Account dengan ATM BNI",
+            "contents": [
+                "Masukkan Kartu Anda",
+                "Pilih Bahasa",
+                "Masukkan PIN ATM Anda",
+                "Kemudian, pilih Menu Lainnya",
+                "Pilih Transfer dan pilih Jenis rekening yang akan Anda gunakan (Contoh: \"Dari Rekening Tabungan\")",
+                "Pilih Virtual Account Billing. Masukkan nomor Virtual Account Anda (Contoh: 1234400005678)",
+                "Tagihan yang harus dibayarkan akan muncul pada layar konfirmasi",
+                "Konfirmasi, apabila telah sesuai, lanjutkan transaksi",
+                "Transaksi Anda telah selesai"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BNI Virtual Account dengan Mobile Banking BNI",
+            "contents": [
+                "Akses BNI Mobile Banking melalui handphone",
+                "Masukkan User ID dan password",
+                "Pilih menu Transfer",
+                "Pilih menu Virtual Account Billing, lalu pilih rekening debet",
+                "Masukkan nomor Virtual Account Anda (Contoh: 1234400005678) pada menu Input Baru",
+                "Tagihan yang harus dibayarkan akan muncul pada layar konfirmasi",
+                "Konfirmasi transaksi dan masukkan Password Transaksi",
+                "Pembayaran Anda Telah Berhasil"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BNI Virtual Account dengan iBank Personal",
+            "contents": [
+                "Akses ibank.bni.co.id kemudian klik Enter",
+                "Masukkan User ID dan password",
+                "Klik menu Transfer, lalu pilih Virtual Account Billing",
+                "Kemudian, masukan nomor Virtual Account Anda (Contoh: 1234400005678) yang akan dibayarkan",
+                "Lalu pilih rekening debet yang akan digunakan. Kemudian tekan Lanjut",
+                "Tagihan yang harus dibayarkan akan muncul pada layar konfirmasi",
+                "Masukkan Kode Otentikasi Token",
+                "Anda akan menerima notifikasi bahwa transaksi berhasil"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BNI Virtual Account dengan SMS Banking",
+            "contents": [
+                "Buka aplikasi SMS Banking BNI",
+                "Pilih menu Transfer",
+                "Pilih menu Transfer rekening BNI",
+                "Masukkan nomor rekening tujuan dengan 16 digit Nomor Virtual Account (Contoh: 1234400005678)",
+                "Masukkan nominal transfer sesuai tagihan. Nominal yang berbeda tidak dapat diproses",
+                "Pilih Proses, kemudian Setuju",
+                "Balas sms dengan mengetik pin sesuai dengan instruksi BNI. Anda akan menerima notif bahwa transaksi berhasil",
+                "Atau dapat juga langsung mengetik sms dengan format: TRF[SPASI]NomorVA[SPASI]NOMINAL dan kemudian kirim ke 3346. Contoh: TRF 1234400005678 44000"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BNI Virtual Account dari Cabang atau Outlet BNI (Teller)",
+            "contents": [
+                "Kunjungi Kantor Cabang/Outlet BNI terdekat",
+                "Informasikan kepada Teller, bahwa Anda ingin melakukan pembayaran Virtual Account Billing",
+                "Serahkan nomor Virtual Account Anda kepada Teller",
+                "Teller akan melakukan konfirmasi kepada Anda dan akan memproses Transaksi",
+                "Apabila transaksi Sukses, Anda akan menerima bukti pembayaran dari Teller tersebut"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BNI Virtual Account dari Agen46",
+            "contents": [
+                "Kunjungi Agen46 terdekat (warung/took/kios dengan tulisan Agen46)",
+                "Informasikan kepada Agen46, bahwa ingin melakukan pembayaran Virtual",
+                "Serahkan nomor Virtual Account Anda kepada Agen46",
+                "Agen46 akan melakukan konfirmasi kepada Anda",
+                "Selanjutnya, transaksi akan diproses",
+                "Apabila transaksi dinyatakan sukses, Anda akan menerima bukti pembayaran dari Agen46"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BNI Virtual Account dengan ATM Bank lain",
+            "contents": [
+                "Pilih menu Transfer antar bank atau Transfer online antar bank",
+                "Masukkan kode bank BNI (009) atau pilih bank yang dituju yaitu BNI",
+                "Masukan 16 Digit Nomor Virtual Account pada kolom rekening tujuan (Contoh: 1234400005678)",
+                "Masukkan nominal transfer sesuai tagihan Anda. Nominal yang berbeda tidak dapat diproses",
+                "Masukkan jumlah pembayaran. (Contoh: 44000)",
+                "Konfirmasi rincian Anda akan tampil pada layar",
+                "Jika sudah sesuai, klik Ya untuk melanjutkan",
+                "Transaksi Anda telah berhasil"
+            ]
+        },
+        {
+            "subtitle": "Pembayaran BNI Virtual Account dari OVO",
+            "contents": [
+                "Buka aplikasi OVO",
+                "Pilih menu Transfer",
+                "Pilih Rekening Bank",
+                "Masukkan kode bank BNI (009) atau pilih bank yang dituju yaitu BNI",
+                "Masukan 16 Digit Nomor Virtual Account pada kolom rekening tujuan (Contoh: 1234400005678)",
+                "Masukkan nominal transfer sesuai tagihan Anda. Pilih Transfer",
+                "Konfirmasi rincian Anda akan tampil di layar",
+                "Jika sudah sesuai, klik Konfirmasi untuk melanjutkan",
+                "Transaksi Anda telah berhasil"
+            ]
+        }
+    ]
+}
