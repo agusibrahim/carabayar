@@ -31,7 +31,7 @@ jobs:
       - name: Prepare files for GitHub Pages
         run: |
           mkdir -p public
-          cp index.html index.js example.html payment-instruction.js data.min.json public/
+          cp index.html index.js example.html style.css payment-instruction.js data.min.json public/
 
       # Langkah 4: Deploy ke GitHub Pages menggunakan action peaceiris
       - name: Deploy to GitHub Pages
