@@ -8,8 +8,7 @@ class PaymentInstruction {
 
   async init() {
     try {
-      const response = await fetch('data.min.json');
-      this.data = await response.json();
+      this.data = JSON_EMBED_HERE
     } catch (error) {
       console.error('Error loading payment instructions:', error);
     }

@@ -1,9 +1,9 @@
-name: Build and Deploy Documentation
+name: Build and Deploy Payment Documentation
 
 on:
   push:
     branches:
-      - main  # atau branch lain yang Anda gunakan
+      - main  # Ganti jika branch utama berbeda
 
 jobs:
   deploy:
@@ -14,11 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Pastikan tool jq terinstal
+      # 2. Install jq (jika belum tersedia)
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
-      # 3. Merge file JSON dari folder "payment" dengan menambahkan field "id"
+      # 3. Gabungkan file JSON dari folder 'payment' dengan menambahkan field "id"
       - name: Merge JSON files with added id field into data.min.json
         run: |
           echo "Menggabungkan file-file JSON dari folder 'payment'..."
@@ -28,31 +28,29 @@ jobs:
           done | jq -cs '.' > data.min.json
           echo "data.min.json berhasil dibuat."
 
-      # 4. Siapkan folder publik untuk GitHub Pages
-      - name: Prepare public folder
+      # 4. Buat folder public untuk file yang akan dideploy
+      - name: Create public folder
         run: mkdir -p public
 
-      # 5. Salin file‑file statis (selain payment-instruction.js) ke folder public
+      # 5. Salin file-file statis ke folder public
       - name: Copy static assets to public folder
         run: |
-          cp index.html index.js example.html public/
+          cp index.html index.js style.css example.html public/
 
-      # 6. Generate payment-instruction.js dengan embed data.min.json
+      # 6. Generate payment-instruction.js dengan menyematkan konten data.min.json
       - name: Generate payment-instruction.js with embedded JSON data
         run: |
           node -e "\
           const fs = require('fs'); \
-          const piPath = 'payment-instruction.js'; \
-          let content = fs.readFileSync(piPath, 'utf8'); \
+          const templatePath = 'payment-instruction.js'; \
+          const outputPath = 'public/payment-instruction.js'; \
+          const template = fs.readFileSync(templatePath, 'utf8'); \
           const jsonData = fs.readFileSync('data.min.json', 'utf8'); \
-          /* Buat method init() baru yang langsung menetapkan this.data */ \
-          const newInit = 'init() { this.data = ' + jsonData + '; }'; \
-          /* Gantikan blok async init() { ... } dengan method baru */ \
-          const replaced = content.replace(/async init\\(\\)\\s*\\{[\\s\\S]*?\\n\\s*\\}/, newInit); \
-          fs.writeFileSync('public/payment-instruction.js', replaced); \
-          console.log('payment-instruction.js berhasil digenerate dengan embedded JSON data.');"
+          const replaced = template.replace('JSON_EMBED_HERE', jsonData); \
+          fs.writeFileSync(outputPath, replaced); \
+          console.log('payment-instruction.js berhasil digenerate dengan embedded JSON data');"
 
-      # 7. Deploy folder public ke GitHub Pages menggunakan peaceiris/actions-gh-pages
+      # 7. Deploy folder public ke GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
