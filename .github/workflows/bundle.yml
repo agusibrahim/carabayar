@@ -1,0 +1,73 @@
+name: Bundle and Minify
+
+on:
+  push:
+    paths:
+      - 'payment/**/*.json'
+      - 'style.css'
+      - 'payment-instruction.js'
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install --yes terser clean-css-cli
+
+      - name: Bundle JSON files
+        run: |
+          echo "window.paymentData = $(find payment -name "*.json" -exec cat {} \; | jq -s .)" > bundled-data.js
+
+      - name: Minify CSS
+        run: |
+          npx cleancss -o style.min.css style.css
+          echo "const styles = \`$(cat style.min.css)\`;" > bundled-styles.js
+          echo "const styleSheet = document.createElement('style');" >> bundled-styles.js
+          echo "styleSheet.textContent = styles;" >> bundled-styles.js
+          echo "document.head.appendChild(styleSheet);" >> bundled-styles.js
+
+      - name: Combine and Minify JS
+        run: |
+          cat bundled-styles.js bundled-data.js payment-instruction.js > combined.js
+          sed -i 's/fetch(.data\.json.)/Promise.resolve(window.paymentData)/' combined.js
+          cp payment-instruction.min.js index.js
+          npx terser combined.js -o payment-instruction.min.js --compress --mangle
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add payment-instruction.min.js
+          git commit -m "chore: update bundled and minified files" || exit 0
+          git push
+
+  deploy:
+    needs: bundle
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
