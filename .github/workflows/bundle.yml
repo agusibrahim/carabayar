@@ -1,73 +1,41 @@
-name: Bundle and Minify
+name: Build and Deploy Documentation
 
 on:
   push:
-    paths:
-      - 'payment/**/*.json'
-      - 'style.css'
-      - 'payment-instruction.js'
+    branches:
+      - main  # atau branch lain sesuai kebutuhan
 
 jobs:
-  bundle:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install --yes terser clean-css-cli
-
-      - name: Bundle JSON files
-        run: |
-          echo "window.paymentData = $(find payment -name "*.json" -exec cat {} \; | jq -s .)" > bundled-data.js
-
-      - name: Minify CSS
-        run: |
-          npx cleancss -o style.min.css style.css
-          echo "const styles = \`$(cat style.min.css)\`;" > bundled-styles.js
-          echo "const styleSheet = document.createElement('style');" >> bundled-styles.js
-          echo "styleSheet.textContent = styles;" >> bundled-styles.js
-          echo "document.head.appendChild(styleSheet);" >> bundled-styles.js
-
-      - name: Combine and Minify JS
-        run: |
-          cat bundled-styles.js bundled-data.js payment-instruction.js > combined.js
-          sed -i 's/fetch(.data\.json.)/Promise.resolve(window.paymentData)/' combined.js
-          cp payment-instruction.min.js index.js
-          npx terser combined.js -o payment-instruction.min.js --compress --mangle
-
-      - name: Commit and Push
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add payment-instruction.min.js
-          git commit -m "chore: update bundled and minified files" || exit 0
-          git push
-
   deploy:
-    needs: bundle
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
-      - uses: actions/checkout@v3
+      # Langkah 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      # (Opsional) Pastikan jq terinstal
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: '.'
+      # Langkah 2: Gabungkan file JSON dari folder 'payment' ke data.min.json
+      - name: Merge JSON files into data.min.json
+        run: |
+          echo "Menggabungkan file JSON dari folder 'payment'..."
+          # Perintah berikut akan membaca semua file JSON di folder 'payment',
+          # menggabungkannya menjadi satu array, dan mengeluarkan output dalam format compact (minified)
+          jq -c -s . payment/*.json > data.min.json
+          echo "File data.min.json berhasil dibuat."
 
+      # Langkah 3: Salin file-file yang diperlukan ke folder publik
+      - name: Prepare files for GitHub Pages
+        run: |
+          mkdir -p public
+          cp index.html index.js example.html payment-instruction.js data.min.json public/
+
+      # Langkah 4: Deploy ke GitHub Pages menggunakan action peaceiris
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
