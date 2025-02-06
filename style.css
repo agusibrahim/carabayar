@@ -442,7 +442,8 @@ strong {
   background: white;
   width: 90%;
   max-width: 800px;
-  max-height: 90vh;
+  max-height: 70vh;
+  margin-top: 210px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
