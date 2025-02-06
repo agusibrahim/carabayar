@@ -3,41 +3,56 @@ name: Build and Deploy Documentation
 on:
   push:
     branches:
-      - main  # Sesuaikan dengan branch yang Anda gunakan
+      - main  # atau branch lain yang Anda gunakan
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Langkah 1: Checkout repository
+      # 1. Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Langkah 2: Install jq (jika belum tersedia)
+      # 2. Pastikan tool jq terinstal
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
-      # Langkah 3: Proses file-file JSON
-      - name: Process and merge JSON files with added id field
+      # 3. Merge file JSON dari folder "payment" dengan menambahkan field "id"
+      - name: Merge JSON files with added id field into data.min.json
         run: |
-          echo "Menggabungkan file-file JSON dari folder 'payment' dengan menambahkan field id..."
-          # Untuk setiap file JSON di folder payment, ambil nama file (tanpa ekstensi)
-          # dan tambahkan properti "id" ke objek JSON-nya.
+          echo "Menggabungkan file-file JSON dari folder 'payment'..."
           for file in payment/*.json; do
             filename=$(basename "$file" .json)
             jq --arg id "$filename" '. + {id: $id}' "$file"
           done | jq -cs '.' > data.min.json
-          echo "File data.min.json berhasil dibuat."
+          echo "data.min.json berhasil dibuat."
 
-      # Langkah 4: Salin file-file yang diperlukan ke folder publik
-      - name: Prepare files for GitHub Pages
+      # 4. Siapkan folder publik untuk GitHub Pages
+      - name: Prepare public folder
+        run: mkdir -p public
+
+      # 5. Salin file‑file statis (selain payment-instruction.js) ke folder public
+      - name: Copy static assets to public folder
         run: |
-          mkdir -p public
-          cp data.min.json public/data.json
-          cp index.html index.js example.html style.css payment-instruction.js data.min.json public/
+          cp index.html index.js example.html public/
 
-      # Langkah 5: Deploy ke GitHub Pages menggunakan action peaceiris
+      # 6. Generate payment-instruction.js dengan embed data.min.json
+      - name: Generate payment-instruction.js with embedded JSON data
+        run: |
+          node -e "\
+          const fs = require('fs'); \
+          const piPath = 'payment-instruction.js'; \
+          let content = fs.readFileSync(piPath, 'utf8'); \
+          const jsonData = fs.readFileSync('data.min.json', 'utf8'); \
+          /* Buat method init() baru yang langsung menetapkan this.data */ \
+          const newInit = 'init() { this.data = ' + jsonData + '; }'; \
+          /* Gantikan blok async init() { ... } dengan method baru */ \
+          const replaced = content.replace(/async init\\(\\)\\s*\\{[\\s\\S]*?\\n\\s*\\}/, newInit); \
+          fs.writeFileSync('public/payment-instruction.js', replaced); \
+          console.log('payment-instruction.js berhasil digenerate dengan embedded JSON data.');"
+
+      # 7. Deploy folder public ke GitHub Pages menggunakan peaceiris/actions-gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
