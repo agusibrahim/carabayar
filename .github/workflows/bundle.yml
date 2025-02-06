@@ -3,7 +3,7 @@ name: Build and Deploy Documentation
 on:
   push:
     branches:
-      - main  # atau branch lain sesuai kebutuhan
+      - main  # Sesuaikan dengan branch yang Anda gunakan
 
 jobs:
   deploy:
@@ -14,27 +14,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # (Opsional) Pastikan jq terinstal
+      # Langkah 2: Install jq (jika belum tersedia)
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
-      # Langkah 2: Gabungkan file JSON dari folder 'payment' ke data.min.json
-      - name: Merge JSON files into data.min.json
+      # Langkah 3: Proses file-file JSON
+      - name: Process and merge JSON files with added id field
         run: |
-          echo "Menggabungkan file JSON dari folder 'payment'..."
-          # Perintah berikut akan membaca semua file JSON di folder 'payment',
-          # menggabungkannya menjadi satu array, dan mengeluarkan output dalam format compact (minified)
-          jq -c -s . payment/*.json > data.min.json
+          echo "Menggabungkan file-file JSON dari folder 'payment' dengan menambahkan field id..."
+          # Untuk setiap file JSON di folder payment, ambil nama file (tanpa ekstensi)
+          # dan tambahkan properti "id" ke objek JSON-nya.
+          for file in payment/*.json; do
+            filename=$(basename "$file" .json)
+            jq --arg id "$filename" '. + {id: $id}' "$file"
+          done | jq -cs '.' > data.min.json
           echo "File data.min.json berhasil dibuat."
 
-      # Langkah 3: Salin file-file yang diperlukan ke folder publik
+      # Langkah 4: Salin file-file yang diperlukan ke folder publik
       - name: Prepare files for GitHub Pages
         run: |
           mkdir -p public
           cp data.min.json public/data.json
-          cp index.html index.js example.html style.css payment-instruction.js data.min.json public/
+          cp index.html index.js example.html payment-instruction.js data.min.json public/
 
-      # Langkah 4: Deploy ke GitHub Pages menggunakan action peaceiris
+      # Langkah 5: Deploy ke GitHub Pages menggunakan action peaceiris
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
