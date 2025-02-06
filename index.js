@@ -2,7 +2,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const paymentId = urlParams.get('page');
 
-fetch('data.json')
+fetch('data.min.json')
   .then(response => response.json())
   .then(data => {
     // Find the payment method data by ID

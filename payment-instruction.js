@@ -8,7 +8,7 @@ class PaymentInstruction {
 
   async init() {
     try {
-      const response = await fetch('data.json');
+      const response = await fetch('data.min.json');
       this.data = await response.json();
     } catch (error) {
       console.error('Error loading payment instructions:', error);
