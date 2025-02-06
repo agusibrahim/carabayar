@@ -35,7 +35,7 @@ jobs:
       # 5. Salin file-file statis ke folder public
       - name: Copy static assets to public folder
         run: |
-          cp index.html index.js style.css example.html public/
+          cp index.html index.js style.css data.min.json example.html public/
 
       # 6. Generate payment-instruction.js dengan menyematkan konten data.min.json
       - name: Generate payment-instruction.js with embedded JSON data
