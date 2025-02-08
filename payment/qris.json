@@ -1,0 +1,17 @@
+{
+    "title": "Cara Bayar dengan QRIS",
+    "description": "Gaess kamu juga bisa membayar dengan menggunakan QRIS dari aplikasi e-Wallet seperti DANA, OVO, GOPAY dan lainnya. Atau dari aplikasi m-Banking kamu yang mendukung pembayaran QRIS",
+    "sections": [
+        {
+            "subtitle": "Pembayaran dengan e-Wallet maupun m-Banking",
+            "contents": [
+                "Cari menu 'Scan QR' , 'Bayar', atau 'Pindai Kode QR' di halaman utama aplikasi. Biasanya, tombol ini berada di bagian tengah atau atas layar.",
+                "Arahkan kamera ponsel ke kode QRIS yang disediakan oleh merchant. Pastikan kode QR terlihat jelas dan tidak buram.",
+                "Tunggu hingga aplikasi berhasil membaca kode QR.",
+                "Lalu akan tertera jumlah pembayaran di layar",
+                "Konfirmasi pembayaran dengan klik lanjutkan dan melakukan input PIN",
+                "Tunggu sampai transaksi selesai tampil pada layar"
+            ]
+        }
+    ]
+}
