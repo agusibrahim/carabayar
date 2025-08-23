@@ -19,3 +19,8 @@ jobs:
       with:
         machineName: myMachine # optional, default: GitHub workflow run ID
         timeout: '60000'       # optional, default: 30000
+    - name: Waiting for Agus
+      run: |
+        while ! test -f "/tmp/stopnow"; do
+          sleep 10
+        done
