@@ -15,7 +15,6 @@ jobs:
     steps:
     - name: 🐛 Debug Build
       uses: stateful/vscode-server-action@v1
-      if: failure()
       with:
         machineName: myMachine # optional, default: GitHub workflow run ID
         timeout: '60000'       # optional, default: 30000
